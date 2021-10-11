@@ -56,7 +56,7 @@ class FresnoDataGenerator:
                 'ISP':random.choice(ISP),
                 'ClientIp': self.faker.ipv4(),
                 'NetworkInterface':'Wireless 80211',
-                'Datetime':str(self.faker.date_time_between(start_date='-1y',end_date='today'))
+                'Datetime':str(self.faker.date_time_between(start_date='-1m', end_date='now'))
             })
         writer.write(f'Fresno/Activity.csv',list_of_dict_to_csv(fresno_data))
 
