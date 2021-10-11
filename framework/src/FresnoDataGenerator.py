@@ -23,7 +23,7 @@ DEVICE_DATA = [
 WIN_TYPES = ['Pro','Home','Enterprise']
 ARCH_TYPES = ['64 bit','32 bit']
 MONITOR_TYPES = [('1080','768'),('1920','1080')]
-ISP = ['Comcast Cable','Fresno County Office of Education','AT&T U-verse','T-Mobile USA']
+ISP = ['AT&T', 'Verizon', 'Comcast', 'Vodafone']
 
 class FresnoDataGenerator:
     def __init__(self, number_of_records = 100):
@@ -51,8 +51,8 @@ class FresnoDataGenerator:
                 'Arch':random.choices(ARCH_TYPES,weights=[80,20])[0],
                 'IEVer':'9.11.{}.0'.format(str(self.faker.random_number(digits=5))),
                 'Monitors':  '\"[{\""Width"\": \""'+ str(monitor_width)+'"\",\""Height":\""'+ str(monitor_height)+'"\"}]\"',
-                'Long': -120 + round(random.uniform(0,1),4),
-                'Lat': 36 + round(random.uniform(0,1),4),
+                'Long': 100 + round(random.uniform(0,10),4),
+                'Lat': 50 + round(random.uniform(0,10),4),
                 'ISP':random.choice(ISP),
                 'ClientIp': self.faker.ipv4(),
                 'NetworkInterface':'Wireless 80211',
